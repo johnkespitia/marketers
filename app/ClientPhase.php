@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Chanel extends Model
+class ClientPhase extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,6 +12,6 @@ class Chanel extends Model
      * @var array
      */
     protected $fillable = [
-        'name'
+        'phase_name'
     ];
 }

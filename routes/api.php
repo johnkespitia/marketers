@@ -29,4 +29,5 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::post('business', 'BusinessController@store');
     Route::put('business/{business}', 'BusinessController@update');
     Route::delete('business/{business}', 'BusinessController@delete');
+    
 });
