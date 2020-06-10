@@ -12,6 +12,6 @@ class Schedule extends Model
      * @var array
      */
     protected $fillable = [
-        'service_id', 'date_schedule', 'cost', "notes","status","client_id"
+       'date_schedule', 'cost', "notes","status","client_id","user_id"
     ];
 }

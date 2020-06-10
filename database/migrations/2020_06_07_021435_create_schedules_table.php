@@ -15,14 +15,14 @@ class CreateSchedulesTable extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->integer("service_id");
             $table->dateTime("date_schedule");
             $table->decimal("cost");
             $table->text("notes");
             $table->boolean('status');
             $table->integer("client_id");
-            $table->foreign('service_id')->references('id')->on('services');
             $table->foreign('client_id')->references('id')->on('clients');
+            $table->integer("user_id");
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

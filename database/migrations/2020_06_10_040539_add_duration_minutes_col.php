@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTypeContactCol extends Migration
+class AddDurationMinutesCol extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AddTypeContactCol extends Migration
      */
     public function up()
     {
-        Schema::table('contacts', function (Blueprint $table) {
-            $table->integer("type_id");
-            $table->foreign('type_id')->references('id')->on('contact_types');
+        Schema::table('services', function (Blueprint $table) {
+            $table->integer("duration_time")->default(0);
         });
     }
 
@@ -26,8 +25,8 @@ class AddTypeContactCol extends Migration
      */
     public function down()
     {
-        Schema::table('contacts', function (Blueprint $table) {
-            $table->dropColumn('type_id');
+        Schema::table('services', function (Blueprint $table) {
+            $table->dropColumn(['duration_time']);
         });
     }
 }

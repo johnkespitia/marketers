@@ -1,36 +1,36 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\ContactType;
 use Illuminate\Http\Request;
 
 class ContactTypeController extends Controller
 {
     public function index()
     {
-        return Business::all();
+        return ContactTypes::all();
     }
  
-    public function show(Business $business)
+    public function show(ContactTypes $contactTypes)
     {
-        return $business;
+        return $contactTypes;
     }
 
     public function store(Request $request)
     {
-        $business =  Business::create($request->all());
-        return response()->json($business, 201);
+        $contactTypes =  ContactTypes::create($request->all());
+        return response()->json($contactTypes, 201);
     }
 
-    public function update(Request $request, Business $business)
+    public function update(Request $request, ContactTypes $contactTypes)
     {
-        $business->update($request->all());
-        return response()->json($business, 200);
+        $contactTypes->update($request->all());
+        return response()->json($contactTypes, 200);
     }
 
-    public function delete(Request $request, Business $business)
+    public function delete(Request $request, ContactTypes $contactTypes)
     {
-        $business->delete();
+        $contactTypes->delete();
         return response()->json(null, 204);
     }
 }

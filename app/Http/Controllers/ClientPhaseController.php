@@ -1,36 +1,36 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\ClientPhase;
 use Illuminate\Http\Request;
 
 class ClientPhaseController extends Controller
 {
     public function index()
     {
-        return Business::all();
+        return ClientPhase::all();
     }
  
-    public function show(Business $business)
+    public function show(ClientPhase $clientPhase)
     {
-        return $business;
+        return $clientPhase;
     }
 
     public function store(Request $request)
     {
-        $business =  Business::create($request->all());
-        return response()->json($business, 201);
+        $clientPhase =  ClientPhase::create($request->all());
+        return response()->json($clientPhase, 201);
     }
 
-    public function update(Request $request, Business $business)
+    public function update(Request $request, ClientPhase $clientPhase)
     {
-        $business->update($request->all());
-        return response()->json($business, 200);
+        $clientPhase->update($request->all());
+        return response()->json($clientPhase, 200);
     }
 
-    public function delete(Request $request, Business $business)
+    public function delete(Request $request, ClientPhase $clientPhase)
     {
-        $business->delete();
+        $clientPhase->delete();
         return response()->json(null, 204);
     }
 }
