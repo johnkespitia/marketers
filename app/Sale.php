@@ -14,4 +14,9 @@ class Sale extends Model
     protected $fillable = [
         'sale_date', 'cost_sale', 'contact_id'
     ];
+
+    public function services()
+    {
+        return $this->hasMany('App\SaleService');
+    }
 }

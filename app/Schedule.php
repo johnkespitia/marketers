@@ -14,4 +14,9 @@ class Schedule extends Model
     protected $fillable = [
        'date_schedule', 'cost', "notes","status","client_id","user_id"
     ];
+
+    public function services()
+    {
+        return $this->hasMany('App\ScheduleService');
+    }
 }

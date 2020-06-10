@@ -14,4 +14,10 @@ class Business extends Model
     protected $fillable = [
         'name', 'email', 'address', "coordinates","phone","whatsapp","description","website"
     ];
+
+
+    public function users()
+    {
+        return $this->hasMany('App\User');
+    }
 }

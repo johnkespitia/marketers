@@ -45,4 +45,9 @@ class User extends Authenticatable
 
         return $this->api_token;
     }
+
+    public function business()
+    {
+        return $this->belongsTo('App\Business');
+    }
 }
