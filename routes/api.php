@@ -21,13 +21,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
  
 Route::post('register', 'Auth\RegisterController@register');
 Route::post('login', 'Auth\LoginController@login');
-Route::post('logout', 'Auth\LoginController@logout');
+
 
 Route::post('business', 'BusinessController@store');
-
+Route::get('business', 'BusinessController@index');
 Route::group(['middleware' => 'auth:api'], function() {
+    //Logout
+    Route::post('logout', 'Auth\LoginController@logout');
+
     //Business routes
-    Route::get('business', 'BusinessController@index');
+    //Route::get('business', 'BusinessController@index');
     Route::get('business/{business}', 'BusinessController@show');
     Route::put('business/{business}', 'BusinessController@update');
     Route::delete('business/{business}', 'BusinessController@delete');
